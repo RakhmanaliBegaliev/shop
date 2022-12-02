@@ -1,8 +1,5 @@
 package service;
-
-import Products.FlourSection.FlourSection;
 import Products.Products;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,11 +16,10 @@ public class Service {
                 vitrina.add(productsList.get(i));
             }
             else{
-                System.out.println("Prosrochenyi: " + productsList.get(i));
+                System.out.println("Просроченный или не тот производитель продукта: " + productsList.get(i));
             }
-
         }
-        System.out.println("Mojno stavit na vitrinu" + vitrina);
+        System.out.println("Можно ставить на витрину" + vitrina);
     }
     public void vitrinaskidok(){
         List<Products> vitrinaskidok = new ArrayList<>();
@@ -34,9 +30,8 @@ public class Service {
             }else if (vitrina.get(i).getDate().isAfter(LocalDate.now())){
                 vitrina.remove(vitrina.get(i));
             }
-
         }
-        System.out.println("7 days ostalos'" + vitrinaskidok);
+        System.out.println("7 дней осталось до конца срока: " + vitrinaskidok);
         }
 
 }

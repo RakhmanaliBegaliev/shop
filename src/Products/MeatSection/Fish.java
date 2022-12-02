@@ -1,11 +1,17 @@
 package Products.MeatSection;
-
-import Products.MeatSection.MeatSection;
-
 import java.time.LocalDate;
 
 public class Fish extends MeatSection {
     public Fish(int id, String name, String manufacturer, LocalDate date) {
         super(id, name, manufacturer, date);
+    }
+    @Override
+    public String toString() {
+        return "Fish{" +
+                "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", manufacturer='" + getManufacturer() + '\'' +
+                ", date=" + getDate() +
+                '}';
     }
 }

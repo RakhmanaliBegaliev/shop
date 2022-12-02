@@ -1,7 +1,5 @@
 package Products.MilkySection;
-
 import Products.Products;
-
 import java.time.LocalDate;
 
 public abstract class MilkySection extends Products {

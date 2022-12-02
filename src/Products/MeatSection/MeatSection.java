@@ -1,7 +1,5 @@
 package Products.MeatSection;
-
 import Products.Products;
-
 import java.time.LocalDate;
 
 public abstract class MeatSection extends Products {

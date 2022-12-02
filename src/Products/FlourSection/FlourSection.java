@@ -1,7 +1,5 @@
 package Products.FlourSection;
-
 import Products.Products;
-
 import java.time.LocalDate;
 
 public abstract class FlourSection extends Products {

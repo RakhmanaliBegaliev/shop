@@ -11,7 +11,6 @@ import Products.MilkySection.MilkySection;
 import Products.MilkySection.Yogurt;
 import Products.Products;
 import service.Service;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,11 +21,11 @@ public class Main {
         List<MilkySection> milkySectionList = new ArrayList<>();
         milkySectionList.add(new Milk(1,"Milk","MILKA", LocalDate.of(2023,01,10)));
         milkySectionList.add(new Yogurt(2,"Yogurt","MILKA",LocalDate.of(2022,12,15)));
-        milkySectionList.add(new Kefir(3,"Kefir","MILKA",LocalDate.of(2022,11,15)));
+        milkySectionList.add(new Kefir(3,"Kefir","Prostokvashino",LocalDate.of(2022,11,15)));
         List<MeatSection>meatSectionList = new ArrayList<>();
         meatSectionList.add(new Meat(1,"Meat","TOIBOS", LocalDate.of(2022,10,24)));
-        meatSectionList.add(new Sausage(2,"Sausage","TOIBOS", LocalDate.of(2022,12,29)));
-        meatSectionList.add(new Meat(3,"Meat","TOIBOS", LocalDate.of(2023,01,15)));
+        meatSectionList.add(new Sausage(2,"Sausage","TOIBOS", LocalDate.of(2022,12,9)));
+        meatSectionList.add(new Meat(3,"Meat","TOIBoS", LocalDate.of(2023,01,15)));
         List<FlourSection>flourSectionList = new ArrayList<>();
         flourSectionList.add(new Bread(1,"Bread","NUR",LocalDate.of(2022,11,20)));
         flourSectionList.add(new Pasta(2,"Pasta","NURsA",LocalDate.of(2022,12,6)));
@@ -34,8 +33,10 @@ public class Main {
 
 
         Service service = new Service();
-        login(meatSectionList,milkySectionList);
-
+        login(meatSectionList,milkySectionList,flourSectionList);
+        System.out.println();
+        System.out.println("Продукты после приемки!");
+        System.out.println();
         service.acceptanceOfProduct(flourSectionList);
         System.out.println("_________________________");
         service.acceptanceOfProduct(meatSectionList);
@@ -50,7 +51,7 @@ public class Main {
         System.out.println("_________________________");
 
     }
-    public static void login(List<MeatSection>meatSectionList,List<MilkySection> milkySectionList){
+    public static void login(List<MeatSection>meatSectionList,List<MilkySection> milkySectionList, List<FlourSection>flourSectionList){
         User Manager = new User("qwerty","12345");
         List<Products> products = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
@@ -65,7 +66,10 @@ public class Main {
             products.add(milkySection);
 
         }
+        for(FlourSection flourSection: flourSectionList)
+            products.add(flourSection);
         if(login.equals(Manager.getLogin()) && password.equals(Manager.getPassword())){
+            System.out.println("Все продукты");
             products.forEach(System.out::println);
 
         }else {
