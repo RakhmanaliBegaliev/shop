@@ -35,14 +35,15 @@ public class Main {
         Service service = new Service();
         login(meatSectionList,milkySectionList,flourSectionList);
         System.out.println();
-        System.out.println("Продукты после приемки!");
+        System.out.println("Produkty posle priemki!");
         System.out.println();
         service.acceptanceOfProduct(flourSectionList);
         System.out.println("_________________________");
         service.acceptanceOfProduct(meatSectionList);
         System.out.println("_________________________");
         service.acceptanceOfProduct(milkySectionList);
-        System.out.println("7 days");
+        System.out.println();
+        System.out.println("Produkty po skidke!");
         service.vitrinaskidok();
         System.out.println("_________________________");
         service.vitrinaskidok();
@@ -56,26 +57,24 @@ public class Main {
         List<Products> products = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         System.out.println("Login: ");
-        String login = sc.nextLine();
+        String login = sc.nextLine().toLowerCase();
         System.out.println("Password: ");
         String password = sc.nextLine();
-            for (MeatSection mi: meatSectionList){
-                products.add(mi);
-            }
-        for (MilkySection milkySection: milkySectionList) {
-            products.add(milkySection);
-
+        for (MeatSection meatSection: meatSectionList){
+                products.add(meatSection);
         }
-        for(FlourSection flourSection: flourSectionList)
-            products.add(flourSection);
+        for (MilkySection milkySection: milkySectionList) {
+                products.add(milkySection);
+        }
+        for(FlourSection flourSection: flourSectionList){
+                products.add(flourSection);
+        }
         if(login.equals(Manager.getLogin()) && password.equals(Manager.getPassword())){
-            System.out.println("Все продукты");
+            System.out.println("Vse produkty");
             products.forEach(System.out::println);
 
         }else {
             System.out.println("Nepravilno vvedeny dannye");
         }
     }
-
-
 }

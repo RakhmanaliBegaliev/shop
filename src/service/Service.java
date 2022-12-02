@@ -16,10 +16,10 @@ public class Service {
                 vitrina.add(productsList.get(i));
             }
             else{
-                System.out.println("Просроченный или не тот производитель продукта: " + productsList.get(i));
+                System.out.println("Prosrochennyi ili ne tot proizvoditel produkta: " + productsList.get(i));
             }
         }
-        System.out.println("Можно ставить на витрину" + vitrina);
+        System.out.println("Mojno stavit na vitrinu" + vitrina);
     }
     public void vitrinaskidok(){
         List<Products> vitrinaskidok = new ArrayList<>();
@@ -31,7 +31,7 @@ public class Service {
                 vitrina.remove(vitrina.get(i));
             }
         }
-        System.out.println("7 дней осталось до конца срока: " + vitrinaskidok);
+        System.out.println("7 dney ostalos do okonchanii sroka: " + vitrinaskidok);
         }
 
 }
